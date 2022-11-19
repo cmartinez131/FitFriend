@@ -18,6 +18,10 @@
 		D456C41429130B60005C60AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D456C41329130B60005C60AF /* Assets.xcassets */; };
 		D456C41729130B60005C60AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D456C41529130B60005C60AF /* LaunchScreen.storyboard */; };
 		D456C41F29130DDE005C60AF /* ChooseWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456C41E29130DDE005C60AF /* ChooseWorkoutTableViewController.swift */; };
+		D45932532929771700FF88A4 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45932522929771700FF88A4 /* QuizViewController.swift */; };
+		D4593255292979C400FF88A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4593254292979C400FF88A4 /* User.swift */; };
+		D45932572929808000FF88A4 /* CalulateBMIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45932562929808000FF88A4 /* CalulateBMIViewController.swift */; };
+		D45932592929877500FF88A4 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45932582929877500FF88A4 /* RecommendationViewController.swift */; };
 		D4EA35A829131FDE00CFC13F /* SavedWorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA35A729131FDE00CFC13F /* SavedWorkoutsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +39,10 @@
 		D456C41629130B60005C60AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D456C41829130B60005C60AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D456C41E29130DDE005C60AF /* ChooseWorkoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWorkoutTableViewController.swift; sourceTree = "<group>"; };
+		D45932522929771700FF88A4 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		D4593254292979C400FF88A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D45932562929808000FF88A4 /* CalulateBMIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalulateBMIViewController.swift; sourceTree = "<group>"; };
+		D45932582929877500FF88A4 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		D4EA35A729131FDE00CFC13F /* SavedWorkoutsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWorkoutsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +80,8 @@
 				D456C40929130B5F005C60AF /* SceneDelegate.swift */,
 				D456C40B29130B5F005C60AF /* HomeScreenViewController.swift */,
 				D456C40D29130B5F005C60AF /* Main.storyboard */,
+				D45932582929877500FF88A4 /* RecommendationViewController.swift */,
+				D4593254292979C400FF88A4 /* User.swift */,
 				D44B4B332925B13C006B2160 /* CurrentWorkoutViewController.swift */,
 				D4EA35A729131FDE00CFC13F /* SavedWorkoutsTableViewController.swift */,
 				D456C41E29130DDE005C60AF /* ChooseWorkoutTableViewController.swift */,
@@ -81,6 +91,8 @@
 				D456C41029130B5F005C60AF /* FitFriend.xcdatamodeld */,
 				D44B4B352925B544006B2160 /* WorkoutItem.swift */,
 				D44B4B392925B652006B2160 /* ExerciseItem.swift */,
+				D45932522929771700FF88A4 /* QuizViewController.swift */,
+				D45932562929808000FF88A4 /* CalulateBMIViewController.swift */,
 			);
 			path = FitFriend;
 			sourceTree = "<group>";
@@ -157,14 +169,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D456C40C29130B5F005C60AF /* HomeScreenViewController.swift in Sources */,
+				D45932532929771700FF88A4 /* QuizViewController.swift in Sources */,
+				D45932592929877500FF88A4 /* RecommendationViewController.swift in Sources */,
 				D44B4B3A2925B652006B2160 /* ExerciseItem.swift in Sources */,
 				D456C41229130B5F005C60AF /* FitFriend.xcdatamodeld in Sources */,
 				D456C40829130B5F005C60AF /* AppDelegate.swift in Sources */,
 				D4EA35A829131FDE00CFC13F /* SavedWorkoutsTableViewController.swift in Sources */,
 				D456C40A29130B5F005C60AF /* SceneDelegate.swift in Sources */,
 				D456C41F29130DDE005C60AF /* ChooseWorkoutTableViewController.swift in Sources */,
+				D45932572929808000FF88A4 /* CalulateBMIViewController.swift in Sources */,
 				D44B4B362925B544006B2160 /* WorkoutItem.swift in Sources */,
 				D44B4B342925B13C006B2160 /* CurrentWorkoutViewController.swift in Sources */,
+				D4593255292979C400FF88A4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

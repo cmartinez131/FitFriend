@@ -1,0 +1,48 @@
+//
+//  RecommendationViewController.swift
+//  FitFriend
+//
+//  Created by Christopher Martinez on 11/19/22.
+//
+
+import UIKit
+
+class RecommendationViewController: UIViewController {
+
+    @IBOutlet weak var bmiLabel: UILabel!
+    @IBOutlet weak var recommendationLabel: UILabel!
+    
+    var bmi: Float?
+    var recommendation: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bmiLabel.text = String(format: "%.2f", bmi!)//round string to 2 decimal places
+        print(bmi!)
+        // Do any additional setup after loading the view.
+        if bmi! < 18.5 {
+            recommendationLabel.text = "You are underweight, do some weight training"
+        } else
+        if bmi! <= 30 {
+            recommendationLabel.text = "You have a healthy BMI. Do some weight training with moderate cardio"
+        }
+        else if bmi! > 30 {
+            recommendationLabel.text = "You are overweight. Focus on cardio with a lot of weight training"
+        }
+        
+        
+        
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
