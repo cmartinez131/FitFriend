@@ -14,6 +14,8 @@ class ChooseWorkoutTableViewController: UITableViewController {
     //array of workout objects
     var workouts = [WorkoutItem]()
     
+    var workoutInProgress = WorkoutItem()
+    
     var currentWorkout = WorkoutItem()//save the current workout object in a variable which I can pass to the next screen
     
     
@@ -29,25 +31,28 @@ class ChooseWorkoutTableViewController: UITableViewController {
         let fullBodyWorkout = WorkoutItem(name: "Full Body", description: "Most efficent fullbody workout focusing on compound movements", image: UIImage(named: "BenchPressCartoon.png"))
         workouts.append(fullBodyWorkout)
         
-        let lowerBodyWorkout = WorkoutItem(name: "Lower Body", description: "Lower body focus on legs and core", image: UIImage(named: "defaultimage.png"))
+        let lowerBodyWorkout = WorkoutItem(name: "Lower Body", description: "Lower body focus on legs and core", image: UIImage(named: "lowerbody.png"))
         workouts.append(lowerBodyWorkout)
         
-        let upperBodyWorkout = WorkoutItem(name: "Upper Body", description: "Upper body workout focusing on chest, back, shoulders, and core", image: UIImage(named: "defaultimage.png"))
+        let upperBodyWorkout = WorkoutItem(name: "Upper Body", description: "Upper body workout focusing on chest, back, shoulders, and core", image: UIImage(named: "upperbody.png"))
         workouts.append(upperBodyWorkout)
         
         let chestWorkout = WorkoutItem(name: "Chest", description: "20 minute workout focused to build bigger and more defined chest", image: UIImage(named: "BenchPressCartoon.png"))
         workouts.append(chestWorkout)
         
-        let backWorkout = WorkoutItem(name: "Back", description: "4 exercises to target every part of back and build back strength", image: UIImage(named: "defaultimage.png"))
+        let backWorkout = WorkoutItem(name: "Back", description: "4 exercises to target every part of back and build back strength", image: UIImage(named: "back.png"))
         workouts.append(backWorkout)
         
         let bicepsWorkout = WorkoutItem(name: "Biceps", description: "Feel the Burn and Build massive Biceps", image: UIImage(named: "bicep.png"))
         workouts.append(bicepsWorkout)
         
-        let cardioWorkout = WorkoutItem(name: "Cardio", description: "Increase stamina and cardiovascular health", image: UIImage(named: "defaultimage.png"))
+        let tricepsWorkout = WorkoutItem(name: "Triceps", description: "Feel the Burn and Build massive arms by building triceps", image: UIImage(named: "triceps.png"))
+        workouts.append(tricepsWorkout)
+        
+        let cardioWorkout = WorkoutItem(name: "Cardio", description: "Increase stamina and cardiovascular health", image: UIImage(named: "running.png"))
         workouts.append(cardioWorkout)
         
-        let baseballWorkout = WorkoutItem(name: "Baseball", description: "Increase explosive power with baseball related movemenets", image: UIImage(named: "defaultimage.png"))
+        let baseballWorkout = WorkoutItem(name: "Baseball", description: "Increase explosive power with baseball related movemenets", image: UIImage(named: "baseball.png"))
         workouts.append(baseballWorkout)
         
         let soccerWorkout = WorkoutItem(name: "Soccer", description: "Increase leg strength, quickness, and agility", image: UIImage(named: "defaultimage.png"))
@@ -59,6 +64,7 @@ class ChooseWorkoutTableViewController: UITableViewController {
         
     }
     
+    //maybe get a random workout that targets those muscles, using the api
     
     // MARK: - Table View Data Source
     override func tableView(
@@ -102,15 +108,30 @@ class ChooseWorkoutTableViewController: UITableViewController {
     ) {
         tableView.deselectRow(at: indexPath, animated: true)
         print("cell selected")
-
+        //set the current workout to the workout chosen
         
+        workoutInProgress = workouts[indexPath.row]
+        print(workoutInProgress)
+        performSegue(withIdentifier: "GoToWorkoutSegue", sender: indexPath.row)
+        //same as:
+        //performSegue(withIdentifier: "GoToWorkoutSegue", sender: workouts[indexPath.row])
+        //performSegue(withIdentifier: "GoToWorkoutSegue", sender: indexPath.row)
+        //workouts[indexPath.row] is the workoutItem object that i want to pass to next screen
+        
+        //how can i use the exercise data api?
+        //-> get the gifs
     }
-//    override func prepare(
-//        for segue: UIStoryboardSegue,
-//        sender: Any?
-//    ){
-//
-//    }
+    //send workout item through the segue
+    override func prepare(
+        for segue: UIStoryboardSegue,
+        sender: Any?
+    ){
+        if segue.identifier == "GoToWorkoutSegue" {
+            let destinationVC = segue.destination as? CurrentWorkoutViewController
+            //set the next screen's current workout to the chosen workout
+            destinationVC?.currentWorkout = workoutInProgress
+        }
+    }
 
     
 //    //Mark: - Navigation
