@@ -21,13 +21,13 @@ class RecommendationViewController: UIViewController {
         print(bmi!)
         // Do any additional setup after loading the view.
         if bmi! < 18.5 {
-            recommendationLabel.text = "You are underweight, do some weight training"
+            recommendationLabel.text = "You are underweight, do some weight training to build muscle"
         } else
         if bmi! <= 30 {
             recommendationLabel.text = "You have a healthy BMI. Do some weight training with moderate cardio"
         }
-        else if bmi! > 30 {
-            recommendationLabel.text = "You are overweight. Focus on cardio with a lot of weight training"
+        else if bmi! > 25 {
+            recommendationLabel.text = "You are overweight. Focus on cardio to slim down with some added weight training"
         }
         
         

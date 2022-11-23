@@ -18,9 +18,10 @@ class ChooseWorkoutTableViewController: UITableViewController {
     
     var currentWorkout = WorkoutItem()//save the current workout object in a variable which I can pass to the next screen
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.tableView.backgroundColor = UIColor.systemCyan
         //question: is it bad practice to put following objects in the WorkoutItem Swift file?
         //add workouts to the array to add more rows
         //todo: create the array of exercises
@@ -51,6 +52,12 @@ class ChooseWorkoutTableViewController: UITableViewController {
         
         let cardioWorkout = WorkoutItem(name: "Cardio", description: "Increase stamina and cardiovascular health", image: UIImage(named: "running.png"))
         workouts.append(cardioWorkout)
+        
+        let HIITWorkout = WorkoutItem(name: "H.I.I.T", description: "High Intensity Interval Training. Periods of fast spurts of intense exercise followed by rest.", image: UIImage(named: "defaultimage.png"))
+        workouts.append(HIITWorkout)
+        
+        let coreWorkout = WorkoutItem(name: "Core", description: "Build a strong core. Building a strong foundation is important for every exercise.", image: UIImage(named: "defualtimage.png"))
+        workouts.append(coreWorkout)
         
         let baseballWorkout = WorkoutItem(name: "Baseball", description: "Increase explosive power with baseball related movemenets", image: UIImage(named: "baseball.png"))
         workouts.append(baseballWorkout)
@@ -133,6 +140,9 @@ class ChooseWorkoutTableViewController: UITableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
     
 //    //Mark: - Navigation
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

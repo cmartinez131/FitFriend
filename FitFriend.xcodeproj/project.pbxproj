@@ -78,23 +78,31 @@
 			children = (
 				D456C40729130B5F005C60AF /* AppDelegate.swift */,
 				D456C40929130B5F005C60AF /* SceneDelegate.swift */,
-				D456C40B29130B5F005C60AF /* HomeScreenViewController.swift */,
+				D459325A292D1F7100FF88A4 /* Controllers */,
 				D456C40D29130B5F005C60AF /* Main.storyboard */,
-				D45932582929877500FF88A4 /* RecommendationViewController.swift */,
 				D4593254292979C400FF88A4 /* User.swift */,
-				D44B4B332925B13C006B2160 /* CurrentWorkoutViewController.swift */,
-				D4EA35A729131FDE00CFC13F /* SavedWorkoutsTableViewController.swift */,
-				D456C41E29130DDE005C60AF /* ChooseWorkoutTableViewController.swift */,
 				D456C41329130B60005C60AF /* Assets.xcassets */,
 				D456C41529130B60005C60AF /* LaunchScreen.storyboard */,
 				D456C41829130B60005C60AF /* Info.plist */,
 				D456C41029130B5F005C60AF /* FitFriend.xcdatamodeld */,
 				D44B4B352925B544006B2160 /* WorkoutItem.swift */,
 				D44B4B392925B652006B2160 /* ExerciseItem.swift */,
+			);
+			path = FitFriend;
+			sourceTree = "<group>";
+		};
+		D459325A292D1F7100FF88A4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D456C40B29130B5F005C60AF /* HomeScreenViewController.swift */,
+				D45932582929877500FF88A4 /* RecommendationViewController.swift */,
+				D44B4B332925B13C006B2160 /* CurrentWorkoutViewController.swift */,
+				D4EA35A729131FDE00CFC13F /* SavedWorkoutsTableViewController.swift */,
+				D456C41E29130DDE005C60AF /* ChooseWorkoutTableViewController.swift */,
 				D45932522929771700FF88A4 /* QuizViewController.swift */,
 				D45932562929808000FF88A4 /* CalulateBMIViewController.swift */,
 			);
-			path = FitFriend;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -32,6 +32,7 @@ class CurrentWorkoutViewController: UIViewController {
         //navigationItem.largeTitleDisplayMode = .never
         WorkoutNameLabel.text = currentWorkout.name
         workoutDescirptionLabel.text = currentWorkout.description
+        navigationItem.title = currentWorkout.name
 
 //        let headers = [
 //            "X-RapidAPI-Key": "724af047ddmshe330f0f888257e2p1c9e38jsn64a47f4f72b2",
