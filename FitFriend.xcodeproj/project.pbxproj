@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4463C622936624700AC2E1B /* CurrentWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4463C612936624700AC2E1B /* CurrentWorkoutTableViewController.swift */; };
 		D44B4B342925B13C006B2160 /* CurrentWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B4B332925B13C006B2160 /* CurrentWorkoutViewController.swift */; };
 		D44B4B362925B544006B2160 /* WorkoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B4B352925B544006B2160 /* WorkoutItem.swift */; };
 		D44B4B3A2925B652006B2160 /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B4B392925B652006B2160 /* ExerciseItem.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4463C612936624700AC2E1B /* CurrentWorkoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWorkoutTableViewController.swift; sourceTree = "<group>"; };
 		D44B4B332925B13C006B2160 /* CurrentWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWorkoutViewController.swift; sourceTree = "<group>"; };
 		D44B4B352925B544006B2160 /* WorkoutItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItem.swift; sourceTree = "<group>"; };
 		D44B4B392925B652006B2160 /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				D44B4B332925B13C006B2160 /* CurrentWorkoutViewController.swift */,
 				D4EA35A729131FDE00CFC13F /* SavedWorkoutsTableViewController.swift */,
 				D456C41E29130DDE005C60AF /* ChooseWorkoutTableViewController.swift */,
+				D4463C612936624700AC2E1B /* CurrentWorkoutTableViewController.swift */,
 				D45932522929771700FF88A4 /* QuizViewController.swift */,
 				D45932562929808000FF88A4 /* CalulateBMIViewController.swift */,
 			);
@@ -183,6 +186,7 @@
 				D456C41229130B5F005C60AF /* FitFriend.xcdatamodeld in Sources */,
 				D456C40829130B5F005C60AF /* AppDelegate.swift in Sources */,
 				D4EA35A829131FDE00CFC13F /* SavedWorkoutsTableViewController.swift in Sources */,
+				D4463C622936624700AC2E1B /* CurrentWorkoutTableViewController.swift in Sources */,
 				D456C40A29130B5F005C60AF /* SceneDelegate.swift in Sources */,
 				D456C41F29130DDE005C60AF /* ChooseWorkoutTableViewController.swift in Sources */,
 				D45932572929808000FF88A4 /* CalulateBMIViewController.swift in Sources */,
@@ -341,6 +345,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -369,6 +374,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

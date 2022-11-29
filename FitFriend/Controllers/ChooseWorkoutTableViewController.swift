@@ -62,6 +62,7 @@ class ChooseWorkoutTableViewController: UITableViewController {
         let coreWorkout = WorkoutItem(name: "Core", description: "Build a strong core. Building a strong foundation is important for every exercise.", image: UIImage(named: "abs.png"))
         workouts.append(coreWorkout) //bodyweight abs workout
         
+        
         let baseballWorkout = WorkoutItem(name: "Baseball", description: "Increase explosive power with baseball related movemenets", image: UIImage(named: "ballthrow.png"))
         workouts.append(baseballWorkout)//focus on medicine balls
         

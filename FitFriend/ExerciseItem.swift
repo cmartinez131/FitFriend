@@ -26,3 +26,18 @@ let benchPressSize = ExerciseItem(name: "Bench Press", image: UIImage(named: "Be
 let bicepCurl = ExerciseItem(name: "Bicep Curl", image: UIImage(named: "defaultimage.png"), description: "Curl the dumbell up and down", numSets: 4, numReps: 10, targets: ["Bicep"])
 
 let squatStrength = ExerciseItem(name: "Barbell Squat", image: UIImage(named: "defaultimage.png"), description: "Brace your core, squat down without letting your knees pass your toes", numSets: 4, numReps: 5, targets: ["Hamstrings", "Quads", "Glutes"])
+
+
+//use api:
+//get list by name (exercise name) -> get the json data which given the name, you get the bodypart targetted, equipment needed, gif url, target
+struct Exercise {
+    var name = ""   //string which is the exercise name. ex: "forward jump", "cable pushdown", "forward lunge (male)"
+    var bodyPart = ""
+    var equipment = ""  //ex: "body weight", cable, barbell
+    var gifUrl = ""     //ex: "http://d205bpvrqc9yn1.cloudfront.net/0201.gif", "http://d205bpvrqc9yn1.cloudfront.net/1472.gif"
+    var muscleTargeted = ""
+    
+    func getExerciseData(name: String) {//take in name of exercise, return data
+        
+    }
+}

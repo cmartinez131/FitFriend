@@ -10,13 +10,18 @@ import Foundation
 
 class CurrentWorkoutViewController: UIViewController {
 
-    @IBOutlet weak var WorkoutNameLabel: UILabel!
+    //@IBOutlet weak var WorkoutNameLabel: UILabel!
     
     @IBOutlet weak var workoutDescirptionLabel: UILabel!
 
 
-    @IBAction func startButtonPressed(_ sender: UIButton) {
+    @IBAction func startButtonPressed(_ sender: UIButton) {//allow user to start workout
         print("started \(currentWorkout.name) workout")
+        sender.isEnabled = false //dont allow user to start workout again
+        
+        
+        //change the function of the button to show next exercise and change the text to show "next exercise"
+        
     }
     
     var currentWorkout = WorkoutItem()
@@ -30,7 +35,7 @@ class CurrentWorkoutViewController: UIViewController {
         
         print("Current workout:  \(currentWorkout.name).")
         //navigationItem.largeTitleDisplayMode = .never
-        WorkoutNameLabel.text = currentWorkout.name
+        //WorkoutNameLabel.text = currentWorkout.name
         workoutDescirptionLabel.text = currentWorkout.description
         navigationItem.title = currentWorkout.name
 
