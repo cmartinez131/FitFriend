@@ -21,13 +21,10 @@ class ChooseWorkoutTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.backgroundColor = UIColor.systemCyan
-        //question: is it bad practice to put following objects in the WorkoutItem Swift file?
         //add workouts to the array to add more rows
         //todo: create the array of exercises
-        
-        //appending workout objects which are created in workoutitem.swift
         //maybe i can create a data file to store all the data and created objects
+        //MARK: Adding workouts to table
 
         let fullBodyWorkout = WorkoutItem(name: "Full Body", description: "Most efficent fullbody workout focusing on compound movements", image: UIImage(named: "fullbody.png"))
         workouts.append(fullBodyWorkout)
@@ -92,6 +89,7 @@ class ChooseWorkoutTableViewController: UITableViewController {
         return 160
     }
     
+    //configure current table cell
     override func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
@@ -123,24 +121,22 @@ class ChooseWorkoutTableViewController: UITableViewController {
         
         workoutInProgress = workouts[indexPath.row]
         print(workoutInProgress)
-        performSegue(withIdentifier: "GoToWorkoutSegue", sender: indexPath.row)
-        //same as:
-        //performSegue(withIdentifier: "GoToWorkoutSegue", sender: workouts[indexPath.row])
-        //performSegue(withIdentifier: "GoToWorkoutSegue", sender: indexPath.row)
-        //workouts[indexPath.row] is the workoutItem object that i want to pass to next screen
-        
+        performSegue(withIdentifier: "ShowWorkout", sender: nil)
+
         //how can i use the exercise data api?
         //-> get the gifs
     }
-    //send workout item through the segue
+    
+    //send workout item selected through the segue
+    //pass reference to the current workout object to the destination VC 
     override func prepare(
         for segue: UIStoryboardSegue,
         sender: Any?
     ){
-        if segue.identifier == "GoToWorkoutSegue" {
-            let destinationVC = segue.destination as? CurrentWorkoutViewController
+        if segue.identifier == "ShowWorkout" {
+            let destinationVC = segue.destination as! WorkoutViewController
             //set the next screen's current workout to the chosen workout
-            destinationVC?.currentWorkout = workoutInProgress
+            destinationVC.currentWorkout = workoutInProgress
         }
     }
 
@@ -148,13 +144,7 @@ class ChooseWorkoutTableViewController: UITableViewController {
         cell.backgroundColor = UIColor.clear
     }
     
-//    //Mark: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "DoWorkout"{
-//            let controller = segue.destination as! CurrentWorkoutViewController
-//            controller.delegate = self
-//        }
-//    }
-//
+    
+
     
 }

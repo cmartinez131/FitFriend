@@ -444,7 +444,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Choose Workout" id="vqw-6X-pFk"/>
                     <connections>
-                        <segue destination="jWh-6l-e2M" kind="show" identifier="GoToWorkoutSegue" id="E1h-e0-eLk"/>
+                        <segue destination="07n-Q5-1ew" kind="show" identifier="ShowWorkout" id="SrD-dr-BfP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIC-Xy-3dt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -581,22 +581,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtz-lg-0lw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3817" y="81"/>
+            <point key="canvasLocation" x="4065" y="508"/>
         </scene>
-        <!--Current Workout Table View Controller-->
-        <scene sceneID="SBJ-25-0Py">
+        <!--Workout View Controller-->
+        <scene sceneID="hsp-Yc-Q4D">
             <objects>
-                <viewController id="Nxt-jt-SGh" customClass="CurrentWorkoutTableViewController" customModule="FitFriend" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="24d-bD-qAH">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xN5-S8-Y50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableViewController id="07n-Q5-1ew" customClass="WorkoutViewController" customModule="FitFriend" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jXr-0D-glU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="IRz-ez-Dgr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lhr-LJ-cyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.31372550129999999" green="0.65098041299999998" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="142" id="z85-qW-Abm">
+                                <rect key="frame" x="0.0" y="44.5" width="375" height="142"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z85-qW-Abm" id="q42-Hq-eJ3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="07n-Q5-1ew" id="HlB-xl-ef7"/>
+                            <outlet property="delegate" destination="07n-Q5-1ew" id="8xJ-Ak-lU4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Ryu-xa-MgE"/>
+                </tableViewController>
             </objects>
-            <point key="canvasLocation" x="4612" y="81"/>
+            <point key="canvasLocation" x="3918" y="-287"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CQz-Fh-tHV">
@@ -641,9 +655,6 @@
             <point key="canvasLocation" x="939.13043478260875" y="69.642857142857139"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="2bu-xc-fFz"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="BenchPressCartoon" width="371" height="319"/>
         <image name="FitFriend-1White" width="1080" height="1080"/>
