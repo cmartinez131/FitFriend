@@ -279,6 +279,7 @@
         <!--Choose Workout-->
         <scene sceneID="73u-fs-X5p">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DIC-Xy-3dt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="J23-tt-dve" customClass="ChooseWorkoutTableViewController" customModule="FitFriend" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="qgy-NV-UhD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -324,7 +325,6 @@
                         <segue destination="07n-Q5-1ew" kind="show" identifier="ShowWorkout" id="SrD-dr-BfP"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DIC-Xy-3dt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2921.5384615384614" y="81.042654028436019"/>
         </scene>
@@ -444,14 +444,7 @@
                         <viewLayoutGuide key="safeArea" id="VQw-Gb-dqS"/>
                         <color key="backgroundColor" red="0.097964145243167877" green="0.66807150840759277" blue="0.94513052701950073" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Workout Chosen" largeTitleDisplayMode="never" id="CLn-n3-IzE">
-                        <barButtonItem key="rightBarButtonItem" title="Save Workout" id="qgJ-wN-ApT">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="save" destination="jWh-6l-e2M" id="mTY-bC-bNg"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Workout Chosen" largeTitleDisplayMode="never" id="CLn-n3-IzE"/>
                     <connections>
                         <outlet property="workoutDescirptionLabel" destination="iCl-gm-qiP" id="AFs-Z2-wb7"/>
                     </connections>
@@ -483,7 +476,19 @@
                             <outlet property="delegate" destination="07n-Q5-1ew" id="8xJ-Ak-lU4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Ryu-xa-MgE"/>
+                    <navigationItem key="navigationItem" id="Ryu-xa-MgE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NuM-4p-Lv8">
+                            <connections>
+                                <action selector="cancel" destination="07n-Q5-1ew" id="NLv-cy-4ce"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save Workout" id="qgJ-wN-ApT">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="save" destination="jWh-6l-e2M" id="mTY-bC-bNg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xN5-S8-Y50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

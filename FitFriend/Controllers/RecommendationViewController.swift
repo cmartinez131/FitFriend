@@ -29,20 +29,5 @@ class RecommendationViewController: UIViewController {
         else if bmi! > 25 {
             recommendationLabel.text = "You are overweight. Focus on cardio to slim down with some added weight training"
         }
-        
-        
-        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

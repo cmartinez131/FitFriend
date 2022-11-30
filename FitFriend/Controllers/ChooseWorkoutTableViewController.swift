@@ -6,25 +6,25 @@
 //
 
 import UIKit
-//to do: add protocol
-class ChooseWorkoutTableViewController: UITableViewController {
 
-    //maybe make workouts a singleton class
+class ChooseWorkoutTableViewController: UITableViewController, WorkoutViewControllerDelegate, UINavigationControllerDelegate {
+    
+    // MARK: - Workout ViewController Delegates
+    //pops the view cntroller, responsibily is on the delegate
+    func workoutViewControllerDidCancel(_ controller: WorkoutViewController) {
+        navigationController?.popViewController(animated: true)
+    }
     
     //array of workout objects
     var workouts = [WorkoutItem]()
     
-    var workoutInProgress = WorkoutItem()
-    
     var currentWorkout = WorkoutItem()//save the current workout object in a variable which I can pass to the next screen
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         //add workouts to the array to add more rows
-        //todo: create the array of exercises
         //maybe i can create a data file to store all the data and created objects
-        //MARK: Adding workouts to table
+        //MARK: Add workouts to table
 
         let fullBodyWorkout = WorkoutItem(name: "Full Body", description: "Most efficent fullbody workout focusing on compound movements", image: UIImage(named: "fullbody.png"), exercises: ["dumbbell bench seated press", "dumbbell biceps curl"])//for each string in exercises array, make an api call to get information about that exercise
         workouts.append(fullBodyWorkout)
@@ -123,8 +123,8 @@ class ChooseWorkoutTableViewController: UITableViewController {
         print("cell selected")
         //set the current workout to the workout chosen
         
-        workoutInProgress = workouts[indexPath.row]
-        print(workoutInProgress)
+        currentWorkout = workouts[indexPath.row]
+        print(currentWorkout)
         performSegue(withIdentifier: "ShowWorkout", sender: nil)
 
         //how can i use the exercise data api?
@@ -140,7 +140,7 @@ class ChooseWorkoutTableViewController: UITableViewController {
         if segue.identifier == "ShowWorkout" {
             let destinationVC = segue.destination as! WorkoutViewController
             //set the next screen's current workout to the chosen workout
-            destinationVC.currentWorkout = workoutInProgress
+            destinationVC.currentWorkout = currentWorkout
         }
     }
 
@@ -148,7 +148,33 @@ class ChooseWorkoutTableViewController: UITableViewController {
         cell.backgroundColor = UIColor.clear
     }
     
+    // MARK: - Navigation Controller Delegates
+    func navigationController(
+      _ navigationController: UINavigationController,
+      willShow viewController: UIViewController,
+      animated: Bool
+    ) {
+      // Was back button tapped?
+      if viewController === self {
+        UserDefaults.standard.set(-1, forKey: "WorkoutIndex")
+      }
+    }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//      super.viewDidAppear(animated)
+//
+//      navigationController?.delegate = self
+//
+//      let index = UserDefaults.standard.integer(
+//        forKey: "WorkoutIndex")
+//      if index != -1 {
+//        let workout = dataModel.lists[index]
+//        performSegue(
+//          withIdentifier: "WorkoutIndex",
+//          sender: workout)
+//      }
+//    }
 
+    
     
 }

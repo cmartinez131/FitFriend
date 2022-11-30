@@ -1,12 +1,12 @@
 //
 //  CurrentWorkoutViewController.swift
 //  FitFriend
-//
-//  Created by Christopher Martinez on 11/16/22.
-//
+
 
 import UIKit
 import Foundation
+
+//probably delete this view controller because i created a table view to make it more readable
 
 class CurrentWorkoutViewController: UIViewController {
 

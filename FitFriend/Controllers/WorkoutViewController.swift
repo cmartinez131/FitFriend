@@ -2,23 +2,29 @@
 //  WorkoutViewController.swift
 //  FitFriend
 //
-//  Created by Christopher Martinez on 11/29/22.
-//
 
 import UIKit
 import Foundation
 
+// MARK: Protocol
+protocol WorkoutViewControllerDelegate: AnyObject {
+  func workoutViewControllerDidCancel(
+    _ controller: WorkoutViewController)
+
+}
+
 class WorkoutViewController: UITableViewController {
-    
-    //reference to the object that was passed through the segue
-    
-    
-    
     var currentWorkout: WorkoutItem!
     var exercisesIndexCounter = 0
     
-    //let exercises = currentWorkout.exercises
+    @IBAction func cancel() {
+      delegate?.workoutViewControllerDidCancel(self)
+        //tried adding following line to the ChooseWorkout delegate but it would not connect to this view controller
+        navigationController?.popViewController(animated: true)
+    }
     
+    
+    weak var delegate: WorkoutViewControllerDelegate?
     
     let cellIdentifier = "DetailCell"
     override func viewDidLoad() {
@@ -30,6 +36,7 @@ class WorkoutViewController: UITableViewController {
         print("Exercises:  \( currentWorkout.exercises)")
         
         
+        // MARK: API Call
         //api call to get all exercises
         
 //        let headers = [
@@ -58,14 +65,12 @@ class WorkoutViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return currentWorkout.exercises.count + 2   //2 accounts for the first 2 rows in table which are not exercises yet
+        return currentWorkout.exercises.count + 2   //+ 2 accounts for the first 2 rows in table which are not exercises yet
     }
-    
     
     override func tableView(
         _ tableView: UITableView,
@@ -105,14 +110,13 @@ class WorkoutViewController: UITableViewController {
         print("cell selected")
     }
     
+    // MARK: Table design configurations
     override func tableView(//adjust cell height
         _ tableView: UITableView,
         heightForRowAt indexPath: IndexPath
     ) -> CGFloat {
         return 80
     }
-    
-
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
