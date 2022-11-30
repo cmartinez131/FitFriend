@@ -26,16 +26,17 @@ class ChooseWorkoutTableViewController: UITableViewController {
         //maybe i can create a data file to store all the data and created objects
         //MARK: Adding workouts to table
 
-        let fullBodyWorkout = WorkoutItem(name: "Full Body", description: "Most efficent fullbody workout focusing on compound movements", image: UIImage(named: "fullbody.png"))
+        let fullBodyWorkout = WorkoutItem(name: "Full Body", description: "Most efficent fullbody workout focusing on compound movements", image: UIImage(named: "fullbody.png"), exercises: ["dumbbell bench seated press", "dumbbell biceps curl"])//for each string in exercises array, make an api call to get information about that exercise
         workouts.append(fullBodyWorkout)
         
-        let lowerBodyWorkout = WorkoutItem(name: "Lower Body", description: "Lower body focus on legs and core", image: UIImage(named: "gobletsquat.png"))
+        
+        let lowerBodyWorkout = WorkoutItem(name: "Lower Body", description: "Lower body workout focuses on legs and core only using dumbbells and bodyweight", image: UIImage(named: "gobletsquat.png"), exercises: ["jump squat", "dumbbell goblet squat", "walking lunge", "dumbbell single leg split squat", "dumbbell seated calf raise"])
         workouts.append(lowerBodyWorkout)
         
-        let upperBodyWorkout = WorkoutItem(name: "Upper Body", description: "Upper body workout focusing on chest, back, shoulders, and core", image: UIImage(named: "upperbody.png"))
+        let upperBodyWorkout = WorkoutItem(name: "Upper Body", description: "Upper body workout focusing on chest, back, shoulders, and core", image: UIImage(named: "upperbody.png"), exercises: [])
         workouts.append(upperBodyWorkout)
         
-        let chestWorkout = WorkoutItem(name: "Chest", description: "20 minute workout focused to build bigger and more defined chest", image: UIImage(named: "pecfly.png"))
+        let chestWorkout = WorkoutItem(name: "Chest", description: "20 minute workout focused to build bigger and more defined chest", image: UIImage(named: "pecfly.png"), exercises: [])
         workouts.append(chestWorkout)
         
         let backWorkout = WorkoutItem(name: "Back", description: "4 exercises to target every part of back and build back strength", image: UIImage(named: "backgif.png"))
@@ -59,7 +60,6 @@ class ChooseWorkoutTableViewController: UITableViewController {
         let coreWorkout = WorkoutItem(name: "Core", description: "Build a strong core. Building a strong foundation is important for every exercise.", image: UIImage(named: "abs.png"))
         workouts.append(coreWorkout) //bodyweight abs workout
         
-        
         let baseballWorkout = WorkoutItem(name: "Baseball", description: "Increase explosive power with baseball related movemenets", image: UIImage(named: "ballthrow.png"))
         workouts.append(baseballWorkout)//focus on medicine balls
         
@@ -67,6 +67,7 @@ class ChooseWorkoutTableViewController: UITableViewController {
         workouts.append(soccerWorkout)//leg workout
         
         let basketballWorkout = WorkoutItem(name: "Basketball", description: "Increase vertical by focusing on explosive leg movements", image: UIImage(named: "jumpsquat.png"))
+        //, exercises: ["jump squat", "one leg floor calf raise"]
         workouts.append(basketballWorkout)//explosiveness focus on legs and core
         
         
@@ -115,6 +116,9 @@ class ChooseWorkoutTableViewController: UITableViewController {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
+        UserDefaults.standard.set(
+            indexPath.row,
+            forKey: "ChecklistIndex")
         tableView.deselectRow(at: indexPath, animated: true)
         print("cell selected")
         //set the current workout to the workout chosen

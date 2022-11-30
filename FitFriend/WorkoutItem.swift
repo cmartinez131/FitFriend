@@ -12,12 +12,14 @@ struct WorkoutItem {//struct vs class?
     var name = ""
     var description = ""
     var image: UIImage?
-    var exercises = [ExerciseItem]()//list of exercise items
-    
+    var exercises = [String]()
+    //var exercisesItems = [ExerciseItem]()//list of exercise items
+
 }
 
 
 var savedWorkouts = [WorkoutItem]()     //array to store saved workouts
-var savedExercises = [ExerciseItem]()   //array to store saved exercises
+//var savedExercises = [ExerciseItem]()   //array to store saved exercises
+var savedExercises = [String]()   //array to store saved exercises
 
 
