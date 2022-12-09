@@ -208,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Od-Ch-mlO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2317.5999999999999" y="841.52923538230891"/>
+            <point key="canvasLocation" x="1887" y="893"/>
         </scene>
         <!--Recommendation View Controller-->
         <scene sceneID="32G-XF-nL8">
@@ -252,7 +252,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="jWh-6l-e2M" kind="show" id="2bu-xc-fFz"/>
+                                    <segue destination="J23-tt-dve" kind="show" id="uBt-zt-D1b"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BMI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L71-cs-u6P">
@@ -274,12 +274,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLY-21-vcA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3178.4000000000001" y="851.42428785607206"/>
+            <point key="canvasLocation" x="2807" y="845"/>
         </scene>
         <!--Choose Workout-->
         <scene sceneID="73u-fs-X5p">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DIC-Xy-3dt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="J23-tt-dve" customClass="ChooseWorkoutTableViewController" customModule="FitFriend" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="qgy-NV-UhD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -325,8 +324,9 @@
                         <segue destination="07n-Q5-1ew" kind="show" identifier="ShowWorkout" id="SrD-dr-BfP"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DIC-Xy-3dt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2921.5384615384614" y="81.042654028436019"/>
+            <point key="canvasLocation" x="3599" y="112"/>
         </scene>
         <!--Workout Chosen-->
         <scene sceneID="ixM-GR-R3c">
@@ -451,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtz-lg-0lw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4223" y="851"/>
+            <point key="canvasLocation" x="-2964" y="1052"/>
         </scene>
         <!--Workout View Controller-->
         <scene sceneID="hsp-Yc-Q4D">
@@ -492,7 +492,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xN5-S8-Y50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4049" y="81"/>
+            <point key="canvasLocation" x="4388" y="81"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CQz-Fh-tHV">
@@ -537,6 +537,9 @@
             <point key="canvasLocation" x="939.13043478260875" y="69.642857142857139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="uBt-zt-D1b"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="FitFriend-1White" width="1080" height="1080"/>
         <image name="person" catalog="system" width="128" height="117"/>

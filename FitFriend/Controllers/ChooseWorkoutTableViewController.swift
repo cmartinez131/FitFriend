@@ -26,47 +26,47 @@ class ChooseWorkoutTableViewController: UITableViewController, WorkoutViewContro
         //maybe i can create a data file to store all the data and created objects
         //MARK: Add workouts to table
 
-        let fullBodyWorkout = WorkoutItem(name: "Full Body", description: "Most efficent fullbody workout focusing on compound movements", image: UIImage(named: "fullbody.png"), exercises: ["dumbbell bench seated press", "dumbbell biceps curl"])//for each string in exercises array, make an api call to get information about that exercise
+        let fullBodyWorkout = WorkoutItem(name: "Full Body", description: "Most efficent fullbody workout focusing on compound movements", image: UIImage(named: "fullbody.png"), exercises: ["squat", "deadlift", "dumbbell bench seated press", "dumbbell biceps curl"])//for each string in exercises array, make an api call to get information about that exercise
         workouts.append(fullBodyWorkout)
         
         
         let lowerBodyWorkout = WorkoutItem(name: "Lower Body", description: "Lower body workout focuses on legs and core only using dumbbells and bodyweight", image: UIImage(named: "gobletsquat.png"), exercises: ["jump squat", "dumbbell goblet squat", "walking lunge", "dumbbell single leg split squat", "dumbbell seated calf raise"])
         workouts.append(lowerBodyWorkout)
         
-        let upperBodyWorkout = WorkoutItem(name: "Upper Body", description: "Upper body workout focusing on chest, back, shoulders, and core", image: UIImage(named: "upperbody.png"), exercises: [])
+        let upperBodyWorkout = WorkoutItem(name: "Upper Body", description: "Upper body workout focusing on chest, back, shoulders, and core", image: UIImage(named: "upperbody.png"), exercises: ["weighted bench dip", "barbell squat", "overhead barbell press", "seated lat pull down", "bent over rows"])
         workouts.append(upperBodyWorkout)
         
-        let chestWorkout = WorkoutItem(name: "Chest", description: "20 minute workout focused to build bigger and more defined chest", image: UIImage(named: "pecfly.png"), exercises: [])
+        let chestWorkout = WorkoutItem(name: "Chest", description: "20 minute workout focused to build bigger and more defined chest", image: UIImage(named: "pecfly.png"), exercises: ["dumbbell bench press", "machine pec fly", "dumbbell pec fly", "incline dumbbell press", "cable crossover", "weighted dips"])
         workouts.append(chestWorkout)
         
         let backWorkout = WorkoutItem(name: "Back", description: "4 exercises to target every part of back and build back strength", image: UIImage(named: "backgif.png"))
         workouts.append(backWorkout)
         
-        let bicepsWorkout = WorkoutItem(name: "Biceps", description: "Feel the Burn and Build massive Biceps", image: UIImage(named: "bicep.png"))
+        let bicepsWorkout = WorkoutItem(name: "Biceps", description: "Feel the Burn and Build massive Biceps", image: UIImage(named: "bicep.png"), exercises: [])
         workouts.append(bicepsWorkout)
         
-        let tricepsWorkout = WorkoutItem(name: "Triceps", description: "Feel the Burn and Build massive arms by building triceps", image: UIImage(named: "triceps.png"))
+        let tricepsWorkout = WorkoutItem(name: "Triceps", description: "Feel the Burn and Build massive arms by building triceps", image: UIImage(named: "triceps.png"), exercises: ["overhead tricep extension", "skull crusher", "close grip bench press", "tricep dumbbell kickback"])
         workouts.append(tricepsWorkout)
         
-        let gluteWorkout = WorkoutItem(name: "Glutes", description: "Grow your Glutes", image: UIImage(named: "goodmorning.png"))
+        let gluteWorkout = WorkoutItem(name: "Glutes", description: "Grow your Glutes", image: UIImage(named: "goodmorning.png"), exercises: [])
         workouts.append(gluteWorkout)
         
-        let cardioWorkout = WorkoutItem(name: "Cardio", description: "Increase stamina and cardiovascular health", image: UIImage(named: "running.png"))
+        let cardioWorkout = WorkoutItem(name: "Cardio", description: "Increase stamina and cardiovascular health", image: UIImage(named: "running.png"), exercises: [])
         workouts.append(cardioWorkout)
         
-        let HIITWorkout = WorkoutItem(name: "H.I.I.T", description: "High Intensity Interval Training. Periods of fast spurts of intense exercise followed by rest.", image: UIImage(named: "hiit.png"))
+        let HIITWorkout = WorkoutItem(name: "H.I.I.T", description: "High Intensity Interval Training. Periods of fast spurts of intense exercise followed by rest.", image: UIImage(named: "hiit.png"), exercises: [])
         workouts.append(HIITWorkout)//do a bicycle workout
         
-        let coreWorkout = WorkoutItem(name: "Core", description: "Build a strong core. Building a strong foundation is important for every exercise.", image: UIImage(named: "abs.png"))
+        let coreWorkout = WorkoutItem(name: "Core", description: "Build a strong core. Building a strong foundation is important for every exercise.", image: UIImage(named: "abs.png"), exercises: [])
         workouts.append(coreWorkout) //bodyweight abs workout
         
-        let baseballWorkout = WorkoutItem(name: "Baseball", description: "Increase explosive power with baseball related movemenets", image: UIImage(named: "ballthrow.png"))
+        let baseballWorkout = WorkoutItem(name: "Baseball", description: "Increase explosive power with baseball related movemenets", image: UIImage(named: "ballthrow.png"), exercises: ["medicine ball throw", "medicine ball rotational throw", "barbell squat"])
         workouts.append(baseballWorkout)//focus on medicine balls
         
-        let soccerWorkout = WorkoutItem(name: "Soccer", description: "Increase leg strength, quickness, and agility", image: UIImage(named: "lunge.png"))
+        let soccerWorkout = WorkoutItem(name: "Soccer", description: "Increase leg strength, quickness, and agility", image: UIImage(named: "lunge.png"), exercises: ["single leg squat", "side lunges", "sprint", "box squat"])
         workouts.append(soccerWorkout)//leg workout
         
-        let basketballWorkout = WorkoutItem(name: "Basketball", description: "Increase vertical by focusing on explosive leg movements", image: UIImage(named: "jumpsquat.png"))
+        let basketballWorkout = WorkoutItem(name: "Basketball", description: "Increase vertical by focusing on explosive leg movements", image: UIImage(named: "jumpsquat.png"), exercises: ["jump squat", "one leg floor calf raise", "hamstring stretch"])
         //, exercises: ["jump squat", "one leg floor calf raise"]
         workouts.append(basketballWorkout)//explosiveness focus on legs and core
         

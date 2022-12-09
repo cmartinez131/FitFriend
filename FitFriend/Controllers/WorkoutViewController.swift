@@ -92,7 +92,7 @@ class WorkoutViewController: UITableViewController {
             
         } else  {
             exerciseName = currentWorkout.exercises[exercisesIndexCounter] //string of current exercise name
-            detailLabel.text = "Exercise: \(exerciseName)"
+            detailLabel.text = "\(exerciseName)"
             exercisesIndexCounter += 1
             
             let exerciseImage = cell.imageView!
