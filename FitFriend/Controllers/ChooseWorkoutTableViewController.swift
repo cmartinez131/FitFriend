@@ -15,6 +15,9 @@ class ChooseWorkoutTableViewController: UITableViewController, WorkoutViewContro
         navigationController?.popViewController(animated: true)
     }
     
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     //array of workout objects
     var workouts = [WorkoutItem]()
     
@@ -116,9 +119,7 @@ class ChooseWorkoutTableViewController: UITableViewController, WorkoutViewContro
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        UserDefaults.standard.set(
-            indexPath.row,
-            forKey: "ChecklistIndex")
+        
         tableView.deselectRow(at: indexPath, animated: true)
         print("cell selected")
         //set the current workout to the workout chosen

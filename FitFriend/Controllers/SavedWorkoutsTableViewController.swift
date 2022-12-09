@@ -6,22 +6,64 @@
 //
 
 import UIKit
+import CoreData
 
 class SavedWorkoutsTableViewController: UITableViewController {
-
+    //reference to managed object context core data
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    //Data for table
+    var items:[Workout]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //fetch the data from coreData AppDelegate
+        fetchWorkout()
         
     }
 
+    //fetch saved workouts from Core Data to display in the table
+    func fetchWorkout() {
+        do {
+            self.items = try context.fetch(Workout.fetchRequest())
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        catch {
+            print("couldn't fetch")
+        }
+    }
+    //create swipe action to remove from saved data
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            
+            let workoutToRemove = self.items![indexPath.row]
+            
+            self.context.delete(workoutToRemove)
+            
+            do {
+                try self.context.save()
+            }
+            catch {
+                
+            }
+            //refetch data to reload table
+            self.fetchWorkout()
+        }
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
     // MARK: - Table view data source
-
     override func tableView(
       _ tableView: UITableView,
       numberOfRowsInSection section: Int
     ) -> Int {
-      return 5
+        return items!.count
     }
 
     override func tableView(
@@ -31,65 +73,33 @@ class SavedWorkoutsTableViewController: UITableViewController {
       let cell = tableView.dequeueReusableCell(
         withIdentifier: "SavedWorkoutItem",
         for: indexPath)
+        
+        let workout = self.items![indexPath.row]
+        cell.textLabel?.text = workout.name
+        cell.textLabel?.font = UIFont(name: "Gill Sans", size: 21)
+        
       return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
-
-        return cell
+    // MARK: - Table View Delegate
+    override func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    // MARK: Table design configurations
+    override func tableView(//adjust cell height
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
+        return 80
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

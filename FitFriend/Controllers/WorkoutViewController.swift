@@ -5,6 +5,7 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 // MARK: Protocol
 protocol WorkoutViewControllerDelegate: AnyObject {
@@ -17,11 +18,36 @@ class WorkoutViewController: UITableViewController {
     var currentWorkout: WorkoutItem!
     var exercisesIndexCounter = 0
     
+    //reference to managed object context so we can interact with Core Data
+    //https://www.youtube.com/watch?v=O7u9nYWjvKk
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    //save current workout in Core Data
+    @IBAction func saveButton(_ sender: UIBarButtonItem) {
+        print("save Button tapped")
+        
+        //create new Workout object
+        let newWorkout = Workout(context: self.context)
+        newWorkout.name = currentWorkout.name
+        newWorkout.desc = currentWorkout.description
+        
+        //save workout into core data
+        do {
+            try self.context.save()
+        }
+        catch {
+            
+        }
+        sender.isEnabled = false
+        
+    }
+    
     @IBAction func cancel() {
       delegate?.workoutViewControllerDidCancel(self)
         //tried adding following line to the ChooseWorkout delegate but it would not connect to this view controller
         navigationController?.popViewController(animated: true)
     }
+    
     
     
     weak var delegate: WorkoutViewControllerDelegate?
