@@ -15,6 +15,7 @@ class SavedWorkoutsTableViewController: UITableViewController {
     //Data for table
     var items:[Workout]?
     
+    var currentWorkout = WorkoutItem()//save the current workout object in a variable which I can pass to the next screen
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class SavedWorkoutsTableViewController: UITableViewController {
     }
 
     //fetch saved workouts from Core Data to display in the table
+    //https://www.youtube.com/watch?v=O7u9nYWjvKk
     func fetchWorkout() {
         do {
             self.items = try context.fetch(Workout.fetchRequest())
@@ -33,7 +35,7 @@ class SavedWorkoutsTableViewController: UITableViewController {
             }
         }
         catch {
-            print("couldn't fetch")
+            
         }
     }
     //create swipe action to remove from saved data
@@ -92,7 +94,12 @@ class SavedWorkoutsTableViewController: UITableViewController {
     ) {
         
         tableView.deselectRow(at: indexPath, animated: true)
+        print("cell selected")
+        //currentWorkout = workouts[indexPath.row]
+        //performSegue(withIdentifier: "ShowWorkout", sender: nil)
     }
+    
+
     
     // MARK: Table design configurations
     override func tableView(//adjust cell height

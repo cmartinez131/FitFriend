@@ -9,9 +9,9 @@ import CoreData
 
 // MARK: Protocol
 protocol WorkoutViewControllerDelegate: AnyObject {
-  func workoutViewControllerDidCancel(
-    _ controller: WorkoutViewController)
-
+    func workoutViewControllerDidCancel(
+        _ controller: WorkoutViewController)
+    
 }
 
 class WorkoutViewController: UITableViewController {
@@ -19,7 +19,6 @@ class WorkoutViewController: UITableViewController {
     var exercisesIndexCounter = 0
     
     //reference to managed object context so we can interact with Core Data
-    //https://www.youtube.com/watch?v=O7u9nYWjvKk
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     //save current workout in Core Data
@@ -40,10 +39,11 @@ class WorkoutViewController: UITableViewController {
         }
         sender.isEnabled = false
         
+        
     }
     
     @IBAction func cancel() {
-      delegate?.workoutViewControllerDidCancel(self)
+        delegate?.workoutViewControllerDidCancel(self)
         //tried adding following line to the ChooseWorkout delegate but it would not connect to this view controller
         navigationController?.popViewController(animated: true)
     }
@@ -53,6 +53,7 @@ class WorkoutViewController: UITableViewController {
     weak var delegate: WorkoutViewControllerDelegate?
     
     let cellIdentifier = "DetailCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = currentWorkout.name
@@ -63,30 +64,33 @@ class WorkoutViewController: UITableViewController {
         
         
         // MARK: API Call
+        
+        
+        
         //api call to get all exercises
         
-//        let headers = [
-//            "X-RapidAPI-Key": "724af047ddmshe330f0f888257e2p1c9e38jsn64a47f4f72b2",
-//            "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
-//        ]
-//
-//        let request = NSMutableURLRequest(url: NSURL(string: "https://exercisedb.p.rapidapi.com/exercises")! as URL,
-//                                                cachePolicy: .useProtocolCachePolicy,
-//                                            timeoutInterval: 10.0)
-//        request.httpMethod = "GET"
-//        request.allHTTPHeaderFields = headers
-//
-//        let session = URLSession.shared
-//        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-//            if (error != nil) {
-//                print(error)
-//            } else {
-//                let httpResponse = response as? HTTPURLResponse
-//                print(httpResponse)
-//            }
-//        })
-//
-//        dataTask.resume()
+        //        let headers = [
+        //            "X-RapidAPI-Key": "724af047ddmshe330f0f888257e2p1c9e38jsn64a47f4f72b2",
+        //            "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
+        //        ]
+        //
+        //        let request = NSMutableURLRequest(url: NSURL(string: "https://exercisedb.p.rapidapi.com/exercises")! as URL,
+        //                                                cachePolicy: .useProtocolCachePolicy,
+        //                                            timeoutInterval: 10.0)
+        //        request.httpMethod = "GET"
+        //        request.allHTTPHeaderFields = headers
+        //
+        //        let session = URLSession.shared
+        //        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+        //            if (error != nil) {
+        //                print(error)
+        //            } else {
+        //                let httpResponse = response as? HTTPURLResponse
+        //                print(httpResponse)
+        //            }
+        //        })
+        //
+        //        dataTask.resume()
         
     }
     
@@ -104,7 +108,7 @@ class WorkoutViewController: UITableViewController {
     ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: cellIdentifier, for: indexPath)
-        let exerciseName: String
+        var exerciseName: String
         
         //configureing current workout screen
         let detailLabel = cell.textLabel!
@@ -122,8 +126,9 @@ class WorkoutViewController: UITableViewController {
             exercisesIndexCounter += 1
             
             let exerciseImage = cell.imageView!
-            exerciseImage.image = UIImage(named: "fullbody.png")
-           
+            
+            exerciseImage.image = UIImage(named: "\(exerciseName).png")
+            
         }
         return cell
     }
