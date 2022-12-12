@@ -42,7 +42,7 @@ class ChooseWorkoutTableViewController: UITableViewController, WorkoutViewContro
         let chestWorkout = WorkoutItem(name: "Chest", description: "20 minute workout focused to build bigger and more defined chest.", image: UIImage(named: "dumbbell fly.png"), exercises: ["dumbbell bench press", "dumbbell fly", "dumbbell incline bench press", "cable cross-over variation", "assisted chest dip (kneeling)","barbell incline close grip bench press"])
         workouts.append(chestWorkout)
         
-        let backWorkout = WorkoutItem(name: "Back", description: "4 exercises to target every part of back and build back strength", image: UIImage(named: "dumbbell incline row.png"), exercises: ["alternate lateral pulldown", "dumbbell incline row","lower back curl","back extension on exercise ball","assisted parallel close grip pull-up"])
+        let backWorkout = WorkoutItem(name: "Back", description: "4 exercises to target every part of back and build back strength", image: UIImage(named: "dumbbell incline row.png"), exercises: ["alternate lateral pulldown", "dumbbell incline row","lower back curl","back extension on exercise ball","assisted parallel close grip pull-up","hyperextension"])
         workouts.append(backWorkout)
         
         let bicepsWorkout = WorkoutItem(name: "Biceps", description: "Feel the Burn and Build massive Biceps", image: UIImage(named: "dumbbell alternate biceps curl.png"), exercises: ["dumbbell alternate biceps curl", "cable hammer curl (with rope)", "dumbbell incline biceps curl", "dumbbell alternate seated hammer curl"])
@@ -51,7 +51,7 @@ class ChooseWorkoutTableViewController: UITableViewController, WorkoutViewContro
         let tricepsWorkout = WorkoutItem(name: "Triceps", description: "Feel the Burn and Build massive arms by building triceps", image: UIImage(named: "barbell lying triceps extension skull crusher.png"), exercises: ["cable high pulley overhead tricep extension", "barbell lying triceps extension skull crusher", "dumbbell close grip press", "dumbbell kickback"])
         workouts.append(tricepsWorkout)
         
-        let gluteWorkout = WorkoutItem(name: "Glutes", description: "Grow your Glutes", image: UIImage(named: "barbell good morning.png"), exercises: ["band bent-over hip extension", "barbell full squat", "barbell romanian deadlift","cable standing hip extension", "barbell good morning"])
+        let gluteWorkout = WorkoutItem(name: "Glutes", description: "Grow your Glutes", image: UIImage(named: "barbell good morning.png"), exercises: ["band bent-over hip extension", "barbell full squat", "barbell romanian deadlift","cable standing hip extension", "barbell good morning","dumbbell single leg split squat","hyperextension"])
         workouts.append(gluteWorkout)
         
 //        let cardioWorkout = WorkoutItem(name: "Cardio", description: "Increase stamina and cardiovascular health", image: UIImage(named: "running.png"), exercises: [])

@@ -16,16 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ic-J3-yqb">
-                                <rect key="frame" x="55" y="285" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ic-J3-yqb">
+                                <rect key="frame" x="55" y="258" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="2GY-WM-rYW"/>
+                                    <constraint firstAttribute="height" constant="150" id="XIQ-Dl-9IB"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Get Custom Workout" subtitle="" cornerStyle="capsule" titleAlignment="center">
+                                <buttonConfiguration key="configuration" style="plain" title="Get Recommended Workout" subtitle="" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.99143986599962097" green="1" blue="0.92935992433131465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="22"/>
+                                    <fontDescription key="titleFontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="16"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -33,16 +36,26 @@
                                     <segue destination="CQY-pA-ghZ" kind="show" id="Ghs-FZ-HJW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWz-Ns-xsd">
-                                <rect key="frame" x="163" y="434" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitFriend-1White" translatesAutoresizingMaskIntoConstraints="NO" id="uU8-gg-Fya">
+                                <rect key="frame" x="85" y="44" width="205" height="202"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="hIg-S8-rS1"/>
+                                    <constraint firstAttribute="height" constant="202" id="xlX-97-i9L"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWz-Ns-xsd">
+                                <rect key="frame" x="163" y="416" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="7XY-3D-rew"/>
+                                    <constraint firstAttribute="height" constant="150" id="NEC-wd-2co"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Choose From our Workouts" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.93961399692798953" green="0.99434783979069108" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="22"/>
+                                    <fontDescription key="titleFontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="16"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -50,13 +63,19 @@
                                     <segue destination="J23-tt-dve" kind="show" id="faP-Vs-oMh"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FitFriend-1White" translatesAutoresizingMaskIntoConstraints="NO" id="uU8-gg-Fya">
-                                <rect key="frame" x="85" y="44" width="205" height="202"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.097964145243167877" green="0.66807150840759277" blue="0.94513052701950073" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uU8-gg-Fya" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Hv-Uo-Icu"/>
+                            <constraint firstItem="uU8-gg-Fya" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-188.5" id="Jmc-dT-0uO"/>
+                            <constraint firstItem="3Ic-J3-yqb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="LeZ-iQ-2Zb"/>
+                            <constraint firstItem="EWz-Ns-xsd" firstAttribute="top" secondItem="uU8-gg-Fya" secondAttribute="bottom" constant="170" id="V4D-Dg-sBH"/>
+                            <constraint firstItem="3Ic-J3-yqb" firstAttribute="top" secondItem="uU8-gg-Fya" secondAttribute="bottom" constant="12" id="apd-fE-l6O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EWz-Ns-xsd" secondAttribute="trailing" constant="62" id="q07-qQ-BbN"/>
+                            <constraint firstItem="uU8-gg-Fya" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s5b-Ax-Kxf"/>
+                            <constraint firstItem="uU8-gg-Fya" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-188.5" id="xzH-cM-dcq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="dlu-Ux-55V"/>
                     <navigationItem key="navigationItem" title="FitFriend" id="gaR-sQ-LAK">
@@ -413,7 +432,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uBt-zt-D1b"/>
+        <segue reference="faP-Vs-oMh"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FitFriend-1White" width="1080" height="1080"/>
