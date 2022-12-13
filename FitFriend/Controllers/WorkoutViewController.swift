@@ -44,7 +44,7 @@ class WorkoutViewController: UITableViewController {
     
     @IBAction func cancel() {
         delegate?.workoutViewControllerDidCancel(self)
-        //tried adding following line to the ChooseWorkout delegate but it would not connect to this view controller
+
         navigationController?.popViewController(animated: true)
     }
     

@@ -19,12 +19,12 @@ class SavedWorkoutsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //fetch the data from coreData AppDelegate
         fetchWorkout()
         
     }
-
+    
     //fetch saved workouts from Core Data to display in the table
     //https://www.youtube.com/watch?v=O7u9nYWjvKk
     func fetchWorkout() {
@@ -62,31 +62,31 @@ class SavedWorkoutsTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(
-      _ tableView: UITableView,
-      numberOfRowsInSection section: Int
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
     ) -> Int {
         return items!.count
     }
-
+    
     override func tableView(
-      _ tableView: UITableView,
-      cellForRowAt indexPath: IndexPath
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(
-        withIdentifier: "SavedWorkoutItem",
-        for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "SavedWorkoutItem",
+            for: indexPath)
         
         let workout = self.items![indexPath.row]
         cell.textLabel?.text = workout.name
         cell.textLabel?.font = UIFont(name: "Gill Sans", size: 21)
         
-      return cell
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }
-
+    
     // MARK: - Table View Delegate
     override func tableView(
         _ tableView: UITableView,
@@ -95,11 +95,10 @@ class SavedWorkoutsTableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         print("cell selected")
-        //currentWorkout = workouts[indexPath.row]
-        //performSegue(withIdentifier: "ShowWorkout", sender: nil)
+
     }
     
-
+    
     
     // MARK: Table design configurations
     override func tableView(//adjust cell height
@@ -108,5 +107,5 @@ class SavedWorkoutsTableViewController: UITableViewController {
     ) -> CGFloat {
         return 80
     }
-
+    
 }

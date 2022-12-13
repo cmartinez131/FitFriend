@@ -26,9 +26,9 @@ class ChooseWorkoutTableViewController: UITableViewController, WorkoutViewContro
     override func viewDidLoad() {
         super.viewDidLoad()
         //add workouts to the array to add more workouts
-
+        
         //MARK: Add workouts to table
-//something i can do instead is to just show all the exercises from the api that target a specific muscle
+        //something i can do instead is to just show all the exercises from the api that target a specific muscle
         let fullBodyWorkout = WorkoutItem(name: "Full Body", description: "Most efficent fullbody workout focusing on compound movements. Compount movements target multiple muscle groups.", image: UIImage(named: "fullbody.png"), exercises: ["dumbbell bench press", "barbell deadlift", "dumbbell seated shoulder press", "dumbbell seated bicep curl", "assisted pull-up","barbell bent over row"])//todo: for each string in exercises array, make an api call to get information about that exercise. get by name
         workouts.append(fullBodyWorkout)
         
@@ -54,8 +54,8 @@ class ChooseWorkoutTableViewController: UITableViewController, WorkoutViewContro
         let gluteWorkout = WorkoutItem(name: "Glutes", description: "Grow your Glutes", image: UIImage(named: "barbell good morning.png"), exercises: ["band bent-over hip extension", "barbell full squat", "barbell romanian deadlift","cable standing hip extension", "barbell good morning","dumbbell single leg split squat","hyperextension"])
         workouts.append(gluteWorkout)
         
-//        let cardioWorkout = WorkoutItem(name: "Cardio", description: "Increase stamina and cardiovascular health", image: UIImage(named: "running.png"), exercises: [])
-//        workouts.append(cardioWorkout)
+        let cardioWorkout = WorkoutItem(name: "Cardio", description: "Increase stamina and cardiovascular health", image: UIImage(named: "running.png"), exercises: ["wind sprints","dumbbell burpee","jump rope"])
+        workouts.append(cardioWorkout)
         
         let HIITWorkout = WorkoutItem(name: "H.I.I.T", description: "High Intensity Interval Training. Periods of fast spurts of intense exercise followed by rest.", image: UIImage(named: "jump rope.png"), exercises: ["wind sprints", "burpee", "dumbbell burpee", "jump rope"])
         workouts.append(HIITWorkout)//do a bicycle workout
@@ -63,15 +63,14 @@ class ChooseWorkoutTableViewController: UITableViewController, WorkoutViewContro
         let coreWorkout = WorkoutItem(name: "Core", description: "Build a strong core. Building a strong foundation is important for every exercise.", image: UIImage(named: "alternate heel touchers.png"), exercises: ["3/4 sit-up", "alternate heel touchers", "hanging leg hip raise", "hanging oblique knee raise"])
         workouts.append(coreWorkout)
         
-        let baseballWorkout = WorkoutItem(name: "Baseball", description: "Increase explosive power with baseball related movemenets usin a medicine ball.", image: UIImage(named: "medicine ball chest pass.png"), exercises: ["medicine ball catch and overhead throw", "medicine ball chest pass", "cable palm rotational row", "barbell full squat"])
+        let baseballWorkout = WorkoutItem(name: "Baseball", description: "Increase explosive power with baseball related movemenets usin a medicine ball.", image: UIImage(named: "medicine ball chest pass.png"), exercises: ["medicine ball catch and overhead throw", "medicine ball chest pass", "cable palm rotational row", "barbell full squat","dumbbell burpee"])
         workouts.append(baseballWorkout)//focus on medicine balls
         
         let soccerWorkout = WorkoutItem(name: "Soccer", description: "Increase leg strength, quickness, and agility to kick harder and be more agile on the field.", image: UIImage(named: "ankle circles.png"), exercises: ["dumbbell single leg squat", "dumbbell lunge", "wind sprints", "hamstring stretch", "ankle circles"])
         workouts.append(soccerWorkout)//leg workout
         
         let basketballWorkout = WorkoutItem(name: "Basketball", description: "Increase vertical jump and durability by focusing on explosive leg movements and stretching.", image: UIImage(named: "jump squat.png"), exercises: ["jump squat", "one leg floor calf raise", "hamstring stretch", "dumbbell lunge"])
-        //, exercises: ["jump squat", "one leg floor calf raise"]
-        workouts.append(basketballWorkout)//explosiveness focus on legs and core
+        workouts.append(basketballWorkout)
         
         
     }
@@ -127,13 +126,13 @@ class ChooseWorkoutTableViewController: UITableViewController, WorkoutViewContro
         currentWorkout = workouts[indexPath.row]
         print(currentWorkout)
         performSegue(withIdentifier: "ShowWorkout", sender: nil)
-
+        
         //how can i use the exercise data api?
         //-> get the gifs
     }
     
     //send workout item selected through the segue
-    //pass reference to the current workout object to the destination VC 
+    //pass reference to the current workout object to the destination VC
     override func prepare(
         for segue: UIStoryboardSegue,
         sender: Any?
@@ -144,38 +143,25 @@ class ChooseWorkoutTableViewController: UITableViewController, WorkoutViewContro
             destinationVC.currentWorkout = currentWorkout
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }
     
     // MARK: - Navigation Controller Delegates
     func navigationController(
-      _ navigationController: UINavigationController,
-      willShow viewController: UIViewController,
-      animated: Bool
+        _ navigationController: UINavigationController,
+        willShow viewController: UIViewController,
+        animated: Bool
     ) {
-      // Was back button tapped?
-      if viewController === self {
-        UserDefaults.standard.set(-1, forKey: "WorkoutIndex")
-      }
+        // Was back button tapped?
+        if viewController === self {
+            UserDefaults.standard.set(-1, forKey: "WorkoutIndex")
+        }
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//      super.viewDidAppear(animated)
-//
-//      navigationController?.delegate = self
-//
-//      let index = UserDefaults.standard.integer(
-//        forKey: "WorkoutIndex")
-//      if index != -1 {
-//        let workout = dataModel.lists[index]
-//        performSegue(
-//          withIdentifier: "WorkoutIndex",
-//          sender: workout)
-//      }
-//    }
-
+    
+    
     
     
 }
